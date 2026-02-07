@@ -40,7 +40,7 @@ ARG JQ_VERSION=1.7.1
 ARG PYTHON_VERSION=3.12.12
 
 # renovate: datasource=pypi depName=pip
-ARG PY3_PIP_VERSION=24.3.1
+ARG PY3_PIP_VERSION=26.0.1
 
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 ARG KUSTOMIZE_VERSION=5.5.0
