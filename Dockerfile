@@ -1,15 +1,15 @@
-FROM alpine:3.21
+FROM alpine:3.23
 
 LABEL maintainer="Wildlife Studios"
 
 # renovate: datasource=repology depName=alpine_edge/bash versioning=loose
-ARG BASH_VERSION=5.2.37
+ARG BASH_VERSION=5.3.9-r1
 
 # renovate: datasource=repology depName=alpine_edge/grep versioning=loose
-ARG GREP_VERSION=3.11
+ARG GREP_VERSION=3.12-r0
 
 # renovate: datasource=repology depName=alpine_edge/git versioning=loose
-ARG GIT_VERSION=2.47.3
+ARG GIT_VERSION=2.53.0-r0
 
 # renovate: datasource=repology depName=alpine_edge/make versioning=loose
 ARG MAKE_VERSION=4.4.1
@@ -21,53 +21,53 @@ ARG ZIP_VERSION=3.0
 ARG OPENSSH_VERSION=9.9_p2-r0
 
 # renovate: datasource=repology depName=alpine_edge/aws-cli versioning=loose
-ARG AWS_CLI_VERSION=2.22.10
+ARG AWS_CLI_VERSION=2.33.14-r0
 
 # renovate: datasource=repology depName=alpine_edge/postgresql15-client versioning=loose
 ARG PSQL_VERSION=15.13-r0
 
 # renovate: datasource=repology depName=alpine_edge/mysql-client versioning=loose
-ARG MYSQL_VERSION=11.4.8-r0
+ARG MYSQL_VERSION=11.8.5-r1
 
 # NOTE: curl tags use underscores; ARG stays dotted.
-# curl-renovate: datasource=github-releases depName=curl/curl version=8_14_1
-ARG CURL_VERSION=8.14.1
+# curl-renovate: datasource=github-releases depName=curl/curl version=8_18_0
+ARG CURL_VERSION=8.18.0
 
 # renovate: datasource=github-releases depName=jqlang/jq
 ARG JQ_VERSION=1.7.1
 
 # renovate: datasource=github-releases depName=containerbase/python-prebuild
-ARG PYTHON_VERSION=3.12.12
+ARG PYTHON_VERSION=3.14.3
 
 # renovate: datasource=pypi depName=pip
 ARG PY3_PIP_VERSION=24.3.1
 
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
-ARG KUSTOMIZE_VERSION=5.5.0
+ARG KUSTOMIZE_VERSION=5.8.0
 
 # renovate: datasource=github-releases depName=fluxcd/flux2
-ARG FLUX_VERSION=2.4.0
+ARG FLUX_VERSION=2.7.5
 
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION=3.16.3
+ARG HELM_VERSION=3.20.0
 
 # renovate: datasource=github-releases depName=mikefarah/yq
-ARG YQ_VERSION=4.44.5
+ARG YQ_VERSION=4.52.2
 
 # renovate: datasource=github-releases depName=hashicorp/vault
-ARG VAULT_VERSION=1.17.5
+ARG VAULT_VERSION=1.21.2
 
 # renovate: datasource=github-releases depName=open-policy-agent/conftest
-ARG CONFTEST_VERSION=0.59.0
+ARG CONFTEST_VERSION=0.66.0
 
 # renovate: datasource=github-releases depName=tfutils/tfenv
 ARG TFENV_VERSION=v3.0.0
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.28.13
+ARG KUBECTL_VERSION=v1.35.0
 
 # renovate: datasource=github-releases depName=gruntwork-io/terragrunt
-ARG TERRAGRUNT=v0.69.9
+ARG TERRAGRUNT=v0.99.1
 
 # renovate: datasource=github-releases depName=im2nguyen/rover
 ARG ROVER_VERSION=0.3.3
@@ -76,7 +76,7 @@ ARG ROVER_VERSION=0.3.3
 ARG HELM_DIFF_VERSION=v3.9.10
 
 # renovate: datasource=github-releases depName=open-policy-agent/opa
-ARG OPA_VERSION=v1.4.2
+ARG OPA_VERSION=v1.13.1
 
 # Base dependencies
 RUN apk update && \
