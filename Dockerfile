@@ -49,7 +49,7 @@ ARG KUSTOMIZE_VERSION=5.5.0
 ARG FLUX_VERSION=2.4.0
 
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION=3.16.3
+ARG HELM_VERSION=4.1.1
 
 # renovate: datasource=github-releases depName=mikefarah/yq
 ARG YQ_VERSION=4.44.5
