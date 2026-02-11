@@ -54,19 +54,19 @@ ARG HELM_VERSION=3.16.3
 ARG YQ_VERSION=4.44.5
 
 # renovate: datasource=github-releases depName=hashicorp/vault
-ARG VAULT_VERSION=1.17.5
+ARG VAULT_VERSION=1.21.2
 
 # renovate: datasource=github-releases depName=open-policy-agent/conftest
-ARG CONFTEST_VERSION=0.59.0
+ARG CONFTEST_VERSION=0.66.0
 
 # renovate: datasource=github-releases depName=tfutils/tfenv
 ARG TFENV_VERSION=v3.0.0
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
-ARG KUBECTL_VERSION=v1.28.13
+ARG KUBECTL_VERSION=v1.35.1
 
 # renovate: datasource=github-releases depName=gruntwork-io/terragrunt
-ARG TERRAGRUNT=v0.69.9
+ARG TERRAGRUNT=v0.99.1
 
 # renovate: datasource=github-releases depName=im2nguyen/rover
 ARG ROVER_VERSION=0.3.3
@@ -75,7 +75,7 @@ ARG ROVER_VERSION=0.3.3
 ARG HELM_DIFF_VERSION=v3.9.10
 
 # renovate: datasource=github-releases depName=open-policy-agent/opa
-ARG OPA_VERSION=v1.4.2
+ARG OPA_VERSION=v1.13.1
 
 # Base dependencies
 RUN apk update && \
