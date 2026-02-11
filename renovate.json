@@ -16,16 +16,18 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["alpine"],
-      "enabled": false
+      "groupName": "Base Image Upgrades"
     },
     {
       "matchUpdateTypes": ["patch"],
+      "excludePackageNames": ["alpine"],
       "groupName": "Patch Upgrades",
       "automerge": true,
       "automergeStrategy": "squash"
     },
     {
       "matchUpdateTypes": ["minor"],
+      "excludePackageNames": ["alpine"],
       "groupName": "Minor Upgrades",
       "automerge": false
     }
