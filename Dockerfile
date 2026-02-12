@@ -2,32 +2,80 @@ FROM alpine:3.21
 
 LABEL maintainer="Wildlife Studios"
 
+# renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ARG BASH_VERSION=5.2.37
-ARG CURL_VERSION=8.14.1
+
+# renovate: datasource=repology depName=alpine_3_21/grep versioning=loose
 ARG GREP_VERSION=3.11
+
+# renovate: datasource=repology depName=alpine_3_21/git versioning=loose
 ARG GIT_VERSION=2.47.3
-ARG JQ_VERSION=1.7.1
+
+# renovate: datasource=repology depName=alpine_3_21/make versioning=loose
 ARG MAKE_VERSION=4.4.1
-ARG PYTHON_VERSION=3.12.12
-ARG PY3_PIP_VERSION=24.3.1
+
+# renovate: datasource=repology depName=alpine_3_21/zip versioning=loose
 ARG ZIP_VERSION=3.0
-ARG OPENSSH_VERSION=9.9_p2
-ARG KUSTOMIZE_VERSION=5.5.0
-ARG FLUX_VERSION=2.4.0
+
+# renovate: datasource=repology depName=alpine_3_21/openssh versioning=loose
+ARG OPENSSH_VERSION=9.9_p2-r0
+
+# renovate: datasource=repology depName=alpine_3_21/aws-cli versioning=loose
 ARG AWS_CLI_VERSION=2.22.10
+
+# renovate: datasource=repology depName=alpine_3_21/postgresql15-client versioning=loose
+ARG PSQL_VERSION=15.13-r0
+
+# renovate: datasource=repology depName=alpine_3_21/mysql-client versioning=loose
+ARG MYSQL_VERSION=11.4.8-r0
+
+# renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
+ARG CURL_VERSION=8.14.1
+
+# renovate: datasource=github-releases depName=jqlang/jq
+ARG JQ_VERSION=1.7.1
+
+# renovate: datasource=repology depName=alpine_3_21/python3 versioning=loose
+ARG PYTHON_VERSION=3.12.12
+
+# renovate: datasource=pypi depName=pip
+ARG PY3_PIP_VERSION=24.3.1
+
+# renovate: datasource=repology depName=alpine_3_21/kustomize versioning=loose
+ARG KUSTOMIZE_VERSION=5.5.0
+
+# renovate: datasource=repology depName=alpine_3_21/flux versioning=loose
+ARG FLUX_VERSION=2.4.0
+
+# renovate: datasource=repology depName=alpine_3_21/helm versioning=loose
 ARG HELM_VERSION=3.16.3
+
+# renovate: datasource=repology depName=alpine_3_21/yq-go versioning=loose
 ARG YQ_VERSION=4.44.5
 
-ARG VAULT_VERSION=1.17.5
-ARG CONFTEST_VERSION=0.59.0
+# renovate: datasource=github-releases depName=hashicorp/vault
+ARG VAULT_VERSION=1.21.2
+
+# renovate: datasource=github-releases depName=open-policy-agent/conftest
+ARG CONFTEST_VERSION=0.66.0
+
+# renovate: datasource=github-releases depName=tfutils/tfenv
 ARG TFENV_VERSION=v3.0.0
-ARG KUBECTL_VERSION=v1.28.13
-ARG TERRAGRUNT=v0.69.9
-ARG PSQL_VERSION=15.13-r0
-ARG MYSQL_VERSION=11.4.8-r0
+
+# renovate: datasource=github-releases depName=kubernetes/kubernetes
+ARG KUBECTL_VERSION=v1.35.1
+
+# renovate: datasource=github-releases depName=gruntwork-io/terragrunt
+ARG TERRAGRUNT=v0.99.1
+
+# renovate: datasource=github-releases depName=im2nguyen/rover
 ARG ROVER_VERSION=0.3.3
+
+# renovate: datasource=github-releases depName=rsafonseca/helm-diff
 ARG HELM_DIFF_VERSION=v3.9.10
-ARG OPA_VERSION=v1.4.2
+
+# renovate: datasource=github-releases depName=open-policy-agent/opa
+ARG OPA_VERSION=v1.13.1
 
 # Base dependencies
 RUN apk update && \
@@ -110,7 +158,7 @@ RUN apkArch="$(apk --print-arch)"; \
       x86_64) arch=amd64 ;; \
       aarch64)  arch=arm64 ;; \
     esac; \
-    curl -L -o /bin/kubectl https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/${arch}/kubectl && \
+    curl -L -o /bin/kubectl https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/${arch}/kubectl && \
     chmod u+x /bin/kubectl
 
 #Helm Diff
